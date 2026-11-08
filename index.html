@@ -392,6 +392,11 @@ mark{background:#ffe98a;padding:0 1px;border-radius:2px}
     ticking=false;
     var y=window.scrollY+90,cur=null;
     secs.forEach(function(s){if(s.offsetTop<=y)cur=s.id});
+    // At the page bottom the last (short) section can't reach the top; treat it as current
+    if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-2){
+      var vis=secs.filter(function(s){return !s.classList.contains('hidden')});
+      if(vis.length)cur=vis[vis.length-1].id;
+    }
     links.forEach(function(a){
       var on=a.getAttribute('href')==='#'+cur;
       if(on&&!a.classList.contains('active')){
