@@ -387,17 +387,26 @@ mark{background:#ffe98a;padding:0 1px;border-radius:2px}
   });
   // Active nav + to-top
   var links=[].slice.call(document.querySelectorAll('nav.toc a')),btn=document.getElementById('toTop');
+  var bar=document.querySelector('nav.toc .wrap'),ticking=false;
   function onScroll(){
+    ticking=false;
     var y=window.scrollY+90,cur=null;
     secs.forEach(function(s){if(s.offsetTop<=y)cur=s.id});
     links.forEach(function(a){
       var on=a.getAttribute('href')==='#'+cur;
-      if(on&&!a.classList.contains('active')){a.scrollIntoView({block:'nearest',inline:'center'})}
+      if(on&&!a.classList.contains('active')){
+        // Scroll only the nav bar horizontally; never touch the page scroll
+        var br=bar.getBoundingClientRect(),ar=a.getBoundingClientRect();
+        bar.scrollLeft+=(ar.left-br.left)-(br.width-ar.width)/2;
+      }
       a.classList.toggle('active',on);
     });
     btn.classList.toggle('show',window.scrollY>500);
   }
-  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  window.addEventListener('scroll',function(){
+    if(!ticking){ticking=true;requestAnimationFrame(onScroll);}
+  },{passive:true});
+  onScroll();
   btn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
 })();
 </script>
