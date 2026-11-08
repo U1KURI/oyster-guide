@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>生牡蠣の調味料・薬味・酒類アイデア一覧</title>
+<style>
+:root{
+  --ink:#1f2b29;--muted:#5d6b67;--line:#dbe3de;--paper:#f6f8f5;--card:#fff;
+  --accent:#2f5d50;--accent-2:#1d3a33;--soft:#eaf2ec;--gold:#8b642c;
+  --c1:#c9a227;--c2:#4a7fa8;--c3:#8a5a3c;--c4:#c0412f;--c5:#4f8a4b;--c6:#b8578a;--c7:#6d6a3f;--c8:#6b4fa0;
+  --radius:12px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",Meiryo,sans-serif;line-height:1.75;font-size:16px;-webkit-text-size-adjust:100%}
+a{color:#245e50;text-decoration-thickness:1px;text-underline-offset:3px}
+
+/* Header */
+header.hero{background:linear-gradient(135deg,#1d3a33 0%,#2f5d50 100%);color:#fff;padding:44px 22px 36px}
+.wrap{max-width:1080px;margin:auto}
+.eyebrow{letter-spacing:.16em;text-transform:uppercase;font-size:.76rem;opacity:.8;font-weight:600}
+h1{font-size:clamp(1.6rem,4.2vw,2.5rem);line-height:1.3;margin:.5rem 0 1rem;font-weight:800}
+.hero p{max-width:760px;margin:0;color:#dfeae4}
+
+/* Sticky nav */
+nav.toc{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line);box-shadow:0 2px 10px rgba(0,0,0,.04)}
+nav.toc .wrap{display:flex;gap:6px;overflow-x:auto;padding:10px 16px;scrollbar-width:none}
+nav.toc .wrap::-webkit-scrollbar{display:none}
+nav.toc a{flex:0 0 auto;text-decoration:none;color:var(--accent-2);font-size:.85rem;font-weight:600;padding:6px 12px;border-radius:99px;background:var(--soft);white-space:nowrap;transition:background .15s,color .15s}
+nav.toc a:hover,nav.toc a.active{background:var(--accent);color:#fff}
+
+main{padding:22px 16px 60px}
+main>.wrap>section{margin-bottom:34px}
+
+/* Search */
+.search{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:10px 14px;margin:0 0 24px;box-shadow:0 1px 3px rgba(0,0,0,.03)}
+.search input{flex:1;border:0;outline:0;font-size:1rem;background:transparent;color:var(--ink);min-width:0}
+.search .count{font-size:.8rem;color:var(--muted);white-space:nowrap}
+.search svg{flex:0 0 18px;color:var(--muted)}
+
+/* Headings */
+.sec-head{display:flex;align-items:center;gap:12px;margin:0 0 .6rem;padding-bottom:.55rem;border-bottom:2px solid var(--line)}
+.sec-num{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 8px;border-radius:10px;background:var(--accent);color:#fff;font-weight:800;font-size:1rem}
+.sec-num.sub{background:var(--c8)}
+h2{font-size:clamp(1.2rem,3vw,1.45rem);line-height:1.4;margin:0}
+p.lead{color:var(--muted);margin:.2rem 0 1rem}
+
+/* Seven-systems cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.card{border:1px solid var(--line);background:var(--card);border-radius:var(--radius);padding:15px 16px;box-shadow:0 1px 3px rgba(0,0,0,.03)}
+.card h3{margin:.05rem 0 .35rem;font-size:1.05rem;color:var(--accent-2);line-height:1.45}
+.card p{margin:.25rem 0;font-size:.94rem}
+.sys{border-top:5px solid var(--sc)}
+.sys h3{display:flex;align-items:center;gap:8px}
+.sys .dot{flex:0 0 28px;height:28px;border-radius:50%;background:var(--sc);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:800}
+.s1{--sc:var(--c1)}.s2{--sc:var(--c2)}.s3{--sc:var(--c3)}.s4{--sc:var(--c4)}.s5{--sc:var(--c5)}.s6{--sc:var(--c6)}.s7{--sc:var(--c7)}
+
+/* Feature cards (Europe) */
+.feature{border-left:5px solid var(--accent)}
+.feature.classic{border-left-color:var(--gold);background:#fffaf1}
+
+/* Tags */
+.tag{display:inline-block;border-radius:99px;background:#edf1ee;color:#43554d;padding:2px 10px;font-size:.74rem;font-weight:700;margin:2px 3px 2px 0;vertical-align:middle;line-height:1.6}
+.tag.real{background:#dff0e3;color:#22603a}
+.tag.idea{background:#fff0d9;color:#80551d}
+
+/* Tables */
+.table-wrap{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin:.8rem 0 1.2rem;box-shadow:0 1px 3px rgba(0,0,0,.03)}
+table{width:100%;border-collapse:collapse;font-size:.93rem}
+th,td{padding:11px 13px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:#e7f0ea;color:#2b443b;font-size:.82rem;letter-spacing:.04em;font-weight:700}
+tbody tr:nth-child(even){background:#fafcfa}
+tbody tr:hover{background:#f0f6f1}
+tr:last-child td{border-bottom:0}
+td:first-child{font-weight:700;color:var(--accent-2);width:30%}
+td.dir{color:#5a4a2a}
+td.dir span{display:inline-block;background:#f6efe2;border-radius:6px;padding:1px 8px;margin:1px 2px 1px 0;font-size:.85rem}
+
+.note{font-size:.88rem;color:var(--muted);background:#f0f3f1;border-radius:8px;padding:10px 13px;margin:.8rem 0 0}
+
+/* Legend */
+.legend{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:.85rem;color:var(--muted);margin:.2rem 0 .9rem}
+
+/* Event list */
+.steps{list-style:none;padding:0;margin:0;display:grid;gap:10px;counter-reset:step}
+.steps li{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:12px 14px 12px 54px;counter-increment:step}
+.steps li::before{content:counter(step);position:absolute;left:14px;top:12px;width:28px;height:28px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.88rem}
+.steps strong{color:var(--accent-2)}
+
+/* Notice */
+.notice{background:#fff4f1;border:1px solid #f1cfc6;border-left:6px solid #c0412f;padding:15px 18px;border-radius:var(--radius);margin:18px 0 0}
+.notice strong{color:#9b2f20}
+.notice ul{margin:.4rem 0 0;padding-left:1.2rem}
+
+/* Sources */
+.sources{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:10px}
+.source{padding:13px 15px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius)}
+.source p{margin:.15rem 0}
+.source p:first-child{font-weight:700;color:var(--accent-2)}
+.source a{word-break:break-word}
+
+footer{max-width:1080px;margin:0 auto;border-top:1px solid var(--line);padding:18px 16px 40px;color:var(--muted);font-size:.86rem}
+
+.to-top{position:fixed;right:16px;bottom:18px;width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;border:0;font-size:1.2rem;box-shadow:0 4px 14px rgba(0,0,0,.18);cursor:pointer;opacity:0;pointer-events:none;transition:opacity .2s}
+.to-top.show{opacity:1;pointer-events:auto}
+
+.hidden{display:none!important}
+mark{background:#ffe98a;padding:0 1px;border-radius:2px}
+
+/* Mobile: tables become cards */
+@media(max-width:640px){
+  body{font-size:15px}
+  header.hero{padding:30px 18px 26px}
+  main{padding:16px 12px 50px}
+  .table-wrap{background:transparent;border:0;box-shadow:none;overflow:visible}
+  table,thead,tbody,tr,td{display:block;width:100%}
+  thead{display:none}
+  tbody tr{background:var(--card)!important;border:1px solid var(--line);border-radius:10px;margin:0 0 9px;padding:10px 13px}
+  td{border:0;padding:3px 0;width:auto!important}
+  td:first-child{font-size:1.02rem;padding-bottom:5px;margin-bottom:4px;border-bottom:1px dashed var(--line)}
+  td:not(:first-child)::before{content:attr(data-label);display:block;font-size:.72rem;font-weight:700;color:var(--muted);letter-spacing:.04em}
+}
+@media print{
+  nav.toc,.search,.to-top{display:none}
+  header.hero{background:#1d3a33;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .card,.table-wrap,.source,.steps li{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+
+<header class="hero"><div class="wrap">
+  <div class="eyebrow">Oyster Tasting Field Guide</div>
+  <h1>生牡蠣の調味料・薬味・酒類アイデア一覧</h1>
+  <p>日本・欧米・アジア・オセアニアの調味料、薬味、ソースを中心に整理。酒類を牡蠣に直接かける方法は、後半の一カテゴリーとして掲載した嗜好探索会向けのアイデア集。</p>
+</div></header>
+
+<nav class="toc" aria-label="目次"><div class="wrap">
+  <a href="#seven-systems">7系統</a>
+  <a href="#japan">1 日本・和風</a>
+  <a href="#europe">2 フランス・欧州</a>
+  <a href="#americas">3 米英・中南米</a>
+  <a href="#asia">4 韓中・東南アジア</a>
+  <a href="#oceania">5 豪・NZ</a>
+  <a href="#other">6 その他・創作</a>
+  <a href="#pairings">7 組み合わせ</a>
+  <a href="#alcohol">8 酒類</a>
+  <a href="#event">9 評価方法</a>
+  <a href="#sources">10 参考資料</a>
+</div></nav>
+
+<main><div class="wrap">
+
+<label class="search">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+  <input id="q" type="search" placeholder="調味料・素材で絞り込み（例：ライム、わさび、ミニョネット）" autocomplete="off">
+  <span class="count" id="qcount"></span>
+</label>
+
+<section id="seven-systems">
+  <div class="sec-head"><span class="sec-num">★</span><h2>まず全体を捉える「7系統」</h2></div>
+  <p class="lead">調味料を産地や国だけでなく、牡蠣にどんな変化を加えるかで整理した基本分類です。ひとつの調味料が複数の系統にまたがることもあります。</p>
+  <div class="grid">
+    <div class="card sys s1 f"><h3><span class="dot">1</span>酸味・柑橘系</h3><p>レモン、ライム、すだち、ゆず、各種ビネガー。後味を引き締め、牡蠣の輪郭を際立たせる。</p></div>
+    <div class="card sys s2 f"><h3><span class="dot">2</span>塩味・ミネラル系</h3><p>岩塩、海塩、フレーク塩、白醤油など。塩味の強さや結晶の食感で、海の風味を補う。</p></div>
+    <div class="card sys s3 f"><h3><span class="dot">3</span>旨味・発酵系</h3><p>醤油、魚醤、味噌、塩麹、ナンプラー、コチュジャンなど。旨味や発酵由来の複雑さを加える。</p></div>
+    <div class="card sys s4 f"><h3><span class="dot">4</span>辛味・刺激系</h3><p>わさび、柚子胡椒、ホースラディッシュ、唐辛子、タバスコ、花椒など。辛味や刺激で味にメリハリをつける。</p></div>
+    <div class="card sys s5 f"><h3><span class="dot">5</span>香味・ハーブ・スパイス系</h3><p>エシャロット、ねぎ、生姜、大葉、ディル、パセリ、コリアンダー、黒胡椒など。香りの方向性を変える。</p></div>
+    <div class="card sys s6 f"><h3><span class="dot">6</span>甘味・果実系</h3><p>りんご、洋梨、ザクロ、柑橘の果肉、少量の蜂蜜や砂糖など。塩味や酸味との対比、丸みをつくる。</p></div>
+    <div class="card sys s7 f"><h3><span class="dot">7</span>油脂・コク・食感系</h3><p>オリーブオイル、ごま油、ラー油、燻製オイル、ケッパー、ピクルス、フィンガーライムなど。口当たりや食感に変化を加える。</p></div>
+  </div>
+  <p class="note">※これは味わいの働きに基づく整理です。たとえばポン酢は「酸味・柑橘」と「塩味・旨味」、柚子胡椒は「辛味」と「香味」のように、複数系統に属します。</p>
+</section>
+
+<section id="japan">
+  <div class="sec-head"><span class="sec-num">1</span><h2>日本・和風</h2></div>
+  <div class="table-wrap"><table><thead><tr><th>候補</th><th>味の方向性</th><th>特徴・試し方</th></tr></thead><tbody>
+  <tr><td>レモン／すだち／かぼす</td><td class="dir">柑橘・酸味</td><td>基準となる爽やかさ。青い香りの違いも比較</td></tr>
+  <tr><td>ゆず／だいだい／シークヮーサー</td><td class="dir">柑橘・芳香</td><td>香りの華やかさや酸味の強さ</td></tr>
+  <tr><td>ポン酢</td><td class="dir">酸味・旨味</td><td>柑橘と出汁、醤油の複合</td></tr>
+  <tr><td>醤油／たまり醤油</td><td class="dir">塩味・旨味</td><td>少量で牡蠣の甘味を引き立てるか</td></tr>
+  <tr><td>白醤油／白だし</td><td class="dir">穏やかな塩味・出汁</td><td>色や香りを抑えた繊細な旨味</td></tr>
+  <tr><td>牡蠣醤油</td><td class="dir">旨味・コク</td><td>旨味の重ね合わせ。強さに注意</td></tr>
+  <tr><td>米酢／黒酢／赤酢</td><td class="dir">酸味・熟成香</td><td>酢ごとの酸の質と余韻を比較</td></tr>
+  <tr><td>梅肉／梅酢</td><td class="dir">酸味・塩味</td><td>梅の酸味と熟成感</td></tr>
+  <tr><td>柚子胡椒</td><td class="dir">柑橘・辛味</td><td>青柚子の香りと唐辛子の刺激</td></tr>
+  <tr><td>わさび／生姜／もみじおろし</td><td class="dir">辛味・清涼感</td><td>刺激の立ち上がりと後味</td></tr>
+  <tr><td>大葉／みょうが／青ねぎ</td><td class="dir">香味</td><td>青い香り、清涼感</td></tr>
+  <tr><td>大根おろし</td><td class="dir">水分・軽い辛味</td><td>口当たりをさっぱりさせる</td></tr>
+  <tr><td>岩塩／藻塩／フレーク塩</td><td class="dir">塩味・ミネラル感</td><td>塩の種類や結晶の食感を比較</td></tr>
+  <tr><td>味噌／白味噌</td><td class="dir">発酵・塩味・コク</td><td>酢や柑橘で伸ばして少量</td></tr>
+  <tr><td>塩麹／醤油麹</td><td class="dir">発酵・旨味</td><td>まろやかな塩味と旨味</td></tr>
+  <tr><td>山椒／七味／一味</td><td class="dir">香味・辛味</td><td>柑橘系や焙煎系の香りを比較</td></tr>
+  </tbody></table></div>
+</section>
+
+<section id="europe">
+  <div class="sec-head"><span class="sec-num">2</span><h2>フランス・欧州</h2></div>
+  <div class="grid">
+    <div class="card feature classic f"><h3>ミニョネット <span class="tag real">定番</span></h3><p>赤ワインビネガー＋エシャロット＋粗挽き黒胡椒。フランス式生牡蠣の代表格。</p></div>
+    <div class="card feature f"><h3>シャンパンビネガー</h3><p>繊細で軽やかな酸味。エシャロットやハーブと合わせる。</p></div>
+    <div class="card feature f"><h3>シェリービネガー</h3><p>熟成香とコク。赤ワインビネガーとの違いを比較。</p></div>
+  </div>
+  <div class="table-wrap"><table><thead><tr><th>候補</th><th>味の方向性</th><th>特徴・試し方</th></tr></thead><tbody>
+  <tr><td>白ワインビネガー</td><td class="dir">酸味</td><td>軽く爽やか</td></tr>
+  <tr><td>赤ワインビネガー</td><td class="dir">酸味</td><td>ミニョネットの基本</td></tr>
+  <tr><td>モルトビネガー</td><td class="dir">酸味・麦芽香</td><td>英国らしい方向性</td></tr>
+  <tr><td>エシャロット</td><td class="dir">香味</td><td>ミニョネットの重要素材</td></tr>
+  <tr><td>ホースラディッシュ</td><td class="dir">辛味</td><td>鼻に抜ける刺激</td></tr>
+  <tr><td>ディジョンマスタード</td><td class="dir">辛味・酸味</td><td>芳香と刺激</td></tr>
+  <tr><td>ケッパー</td><td class="dir">酸味・塩味</td><td>刻んでソースに加える</td></tr>
+  <tr><td>オリーブオイル</td><td class="dir">油脂・果実香</td><td>品種による香りや苦味の違い</td></tr>
+  <tr><td>バジルソース</td><td class="dir">香味・油脂</td><td>ハーブの存在感</td></tr>
+  <tr><td>パセリ／ディル／タラゴン</td><td class="dir">香味</td><td>清涼感、甘い芳香、アニス様の香り</td></tr>
+  <tr><td>サルサ・ベルデ</td><td class="dir">香味・酸味</td><td>パセリ、ケッパー、にんにく、オイル、酢</td></tr>
+  <tr><td>クレームフレッシュ／ヨーグルト</td><td class="dir">乳酸・コク</td><td>レモンやハーブと合わせる</td></tr>
+  <tr><td>バルサミコ酢</td><td class="dir">甘味・酸味・熟成香</td><td>少量で甘味が強くなりすぎないように</td></tr>
+  </tbody></table></div>
+</section>
+
+<section id="americas">
+  <div class="sec-head"><span class="sec-num">3</span><h2>アメリカ・イギリス・中南米</h2></div>
+  <div class="table-wrap"><table><thead><tr><th>候補</th><th>主な構成・特徴</th><th>味の方向</th></tr></thead><tbody>
+  <tr><td>カクテルソース</td><td>ケチャップ＋ホースラディッシュ＋レモン＋ウスターソース</td><td class="dir">甘味・酸味・辛味</td></tr>
+  <tr><td>タバスコ</td><td>唐辛子発酵酢</td><td class="dir">酸味を伴う辛味</td></tr>
+  <tr><td>ルイジアナ系ホットソース</td><td>唐辛子＋酢</td><td class="dir">軽快な酸味と辛味</td></tr>
+  <tr><td>ウスターソース</td><td>野菜・果実・スパイスの複合調味料</td><td class="dir">発酵感・スパイス・旨味</td></tr>
+  <tr><td>トマトサルサ</td><td>トマト、玉ねぎ、唐辛子、ライム、香菜</td><td class="dir">フレッシュな酸味・辛味</td></tr>
+  <tr><td>ペブレ風（チリ）</td><td>トマト、玉ねぎ、香菜、唐辛子、酢</td><td class="dir">青い香味と辛味</td></tr>
+  <tr><td>ハラペーニョレリッシュ</td><td>青唐辛子、酢、玉ねぎ</td><td class="dir">青い辛味と酸味</td></tr>
+  <tr><td>レチェ・デ・ティグレ風（ペルー）</td><td>ライム、魚介出汁、唐辛子、香味野菜</td><td class="dir">強い酸味と旨味</td></tr>
+  <tr><td>ザクロソース</td><td>ザクロ果汁・濃縮果汁</td><td class="dir">果実の甘酸っぱさ</td></tr>
+  <tr><td>メープルシロップ</td><td>樹液由来の甘味</td><td class="dir">酢やマスタードと少量で</td></tr>
+  </tbody></table></div>
+</section>
+
+<section id="asia">
+  <div class="sec-head"><span class="sec-num">4</span><h2>韓国・中国・東南アジア</h2></div>
+  <div class="table-wrap"><table><thead><tr><th>候補</th><th>主な構成・特徴</th><th>味の方向</th></tr></thead><tbody>
+  <tr><td>チョジャン</td><td>コチュジャン＋酢＋甘味</td><td class="dir">甘味・辛味・酸味・発酵</td></tr>
+  <tr><td>コチュジャン</td><td>韓国の発酵唐辛子味噌</td><td class="dir">甘辛さとコク</td></tr>
+  <tr><td>キムチの汁</td><td>発酵野菜の漬け汁</td><td class="dir">乳酸発酵の酸味・辛味</td></tr>
+  <tr><td>ナンプラー／ヌクマム</td><td>魚醤</td><td class="dir">塩味・強い旨味</td></tr>
+  <tr><td>ヌクチャム</td><td>魚醤＋ライム＋砂糖＋唐辛子</td><td class="dir">甘酸っぱく塩味と辛味</td></tr>
+  <tr><td>タイ風シーフードソース</td><td>ライム＋魚醤＋唐辛子＋にんにく＋砂糖</td><td class="dir">酸味・辛味・旨味</td></tr>
+  <tr><td>豆板醤</td><td>発酵唐辛子・そら豆味噌</td><td class="dir">辛味・塩味・発酵</td></tr>
+  <tr><td>中国黒酢</td><td>穀物酢の熟成タイプ</td><td class="dir">酸味・香ばしさ・コク</td></tr>
+  <tr><td>生姜ねぎソース</td><td>生姜、ねぎ、油、塩</td><td class="dir">香味と油脂</td></tr>
+  <tr><td>ごま油／ラー油／花椒油</td><td>焙煎ごま、唐辛子油、花椒油</td><td class="dir">香ばしさ・辛味・痺れ</td></tr>
+  <tr><td>パクチー／青唐辛子／にんにく</td><td>生の香味素材</td><td class="dir">鮮烈な香り・刺激</td></tr>
+  </tbody></table></div>
+</section>
+
+<section id="oceania">
+  <div class="sec-head"><span class="sec-num">5</span><h2>オーストラリア・ニュージーランド</h2></div>
+  <div class="table-wrap"><table><thead><tr><th>候補</th><th>特徴</th><th>味の方向</th></tr></thead><tbody>
+  <tr><td>フィンガーライム</td><td>粒状果肉を持つ在来柑橘</td><td class="dir">酸味・柑橘香・プチプチ食感</td></tr>
+  <tr><td>デザートライム</td><td>オーストラリアの在来柑橘</td><td class="dir">野性味のある柑橘酸味</td></tr>
+  <tr><td>レモンマートル</td><td>レモンを思わせる香りのハーブ</td><td class="dir">芳香・清涼感</td></tr>
+  <tr><td>タスマニアン・ペッパーベリー</td><td>在来植物由来のスパイス</td><td class="dir">果実感のある辛味</td></tr>
+  <tr><td>ソルトブッシュ</td><td>在来植物の葉</td><td class="dir">塩味・青い香り</td></tr>
+  <tr><td>ストロベリーガム</td><td>甘い芳香を持つ在来植物</td><td class="dir">ベリーを思わせる香り</td></tr>
+  <tr><td>ココナッツ／レモングラス／ガランガル</td><td>南国系の香味素材</td><td class="dir">甘いコク・柑橘様の香り</td></tr>
+  </tbody></table></div>
+</section>
+
+<section id="other">
+  <div class="sec-head"><span class="sec-num">6</span><h2>その他の地域・創作系</h2></div>
+  <div class="table-wrap"><table><thead><tr><th>候補</th><th>主な構成・特徴</th><th>味の方向</th></tr></thead><tbody>
+  <tr><td>ハリッサ</td><td>唐辛子、クミン、コリアンダー、にんにく</td><td class="dir">北アフリカ風の辛味とスパイス</td></tr>
+  <tr><td>アップルミニョネット</td><td>リンゴ、シードルビネガー、エシャロット</td><td class="dir">果実の甘酸っぱさ</td></tr>
+  <tr><td>キュウリミニョネット</td><td>キュウリ、米酢、生姜、ハーブ</td><td class="dir">清涼感と酸味</td></tr>
+  <tr><td>オレンジミニョネット</td><td>オレンジ、エシャロット、ハーブ</td><td class="dir">柑橘の甘味と香り</td></tr>
+  <tr><td>スパイシーミニョネット</td><td>ハラペーニョ、酢、胡椒</td><td class="dir">辛味を加えた定番ソース</td></tr>
+  <tr><td>トマト・バジル</td><td>トマト、バジル、オリーブオイル</td><td class="dir">イタリアン風の甘味と香り</td></tr>
+  <tr><td>ヨーグルトソース</td><td>ヨーグルト、レモン、にんにく、パセリ</td><td class="dir">乳酸系の酸味とコク</td></tr>
+  <tr><td>フィンガーライム・ビネグレット</td><td>フィンガーライム、ビネガー、オイル</td><td class="dir">柑橘と食感</td></tr>
+  <tr><td>ポン酢キャビア</td><td>ポン酢＋とびこ・イクラ</td><td class="dir">酸味と粒状の旨味</td></tr>
+  </tbody></table></div>
+</section>
+
+<section id="pairings">
+  <div class="sec-head"><span class="sec-num">7</span><h2>組み合わせ・複合ソース</h2></div>
+  <div class="table-wrap"><table><thead><tr><th>組み合わせ</th><th>材料</th><th>体験できる味</th></tr></thead><tbody>
+  <tr><td>クラシック・ミニョネット</td><td>赤ワインビネガー＋エシャロット＋黒胡椒</td><td class="dir">フレンチの王道</td></tr>
+  <tr><td>アジアン・ミニョネット</td><td>米酢＋ごま油＋唐辛子＋メープルシロップ</td><td class="dir">酸味・香ばしさ・甘味</td></tr>
+  <tr><td>ジンジャー・ワサビ</td><td>米酢＋わさび＋醤油＋生姜</td><td class="dir">和洋折衷の刺激</td></tr>
+  <tr><td>ポン酢キャビア</td><td>ポン酢＋とびこ・イクラ</td><td class="dir">酸味と粒状の旨味</td></tr>
+  <tr><td>トマトバジル</td><td>トマト＋バジル＋オリーブオイル</td><td class="dir">イタリアン風</td></tr>
+  <tr><td>タイ風シーフードソース</td><td>ライム＋ナンプラー＋唐辛子＋にんにく</td><td class="dir">酸味・旨味・刺激</td></tr>
+  <tr><td>アップルジンジャー</td><td>リンゴ＋シードルビネガー＋生姜＋エシャロット</td><td class="dir">果実感と清涼感</td></tr>
+  <tr><td>フィンガーライム・ビネグレット</td><td>フィンガーライム＋ビネガー＋オイル</td><td class="dir">柑橘と食感</td></tr>
+  <tr><td>ココナッツ・レモングラス</td><td>ココナッツ＋レモングラス＋ガランガル＋ライム</td><td class="dir">南国風の香りとコク</td></tr>
+  <tr><td>カクテルソース</td><td>ケチャップ＋ホースラディッシュ＋タバスコ＋レモン</td><td class="dir">甘味・辛味・酸味</td></tr>
+  </tbody></table></div>
+</section>
+
+<section id="alcohol">
+  <div class="sec-head"><span class="sec-num sub">8</span><h2>補助的な第8系統：酒類を直接かける・牡蠣汁に加える</h2></div>
+  <p class="lead">ここは調味料全体の中の一カテゴリーとして、優先度を下げて配置しています。ウイスキーがけのような直接使用を中心に、実例と創作候補を分けて記載します。</p>
+  <div class="legend"><span><span class="tag real">実例あり</span>提供例を確認できたもの</span><span><span class="tag idea">試作候補</span>牡蠣専用の定番としては未確認</span></div>
+  <div class="grid">
+    <div class="card f"><h3>ウイスキー／スコッチ <span class="tag real">直接使用の実例あり</span></h3><p>ピート香、潮っぽさ、樽香。殻の牡蠣汁や身に数滴から。</p></div>
+    <div class="card f"><h3>ジャパニーズウイスキー <span class="tag real">直接使用の実例あり</span></h3><p>繊細な樽香や果実香。スポイトで少量垂らす提供例。</p></div>
+    <div class="card f"><h3>ウォッカ／ジン／テキーラ <span class="tag real">ショットの実例あり</span></h3><p>牡蠣を入れたショットや牡蠣汁への添加。ジンはハーブ香、テキーラはアガベ香。</p></div>
+    <div class="card f"><h3>バーボン／アイリッシュウイスキー <span class="tag idea">試作候補</span></h3><p>バニラ、キャラメル、麦芽などの香りを少量で比較。</p></div>
+    <div class="card f"><h3>メスカル／ラム <span class="tag idea">試作候補</span></h3><p>燻製香、糖蜜や樽香。ライムや唐辛子との相性を試す。</p></div>
+    <div class="card f"><h3>日本酒／焼酎／泡盛 <span class="tag idea">試作候補</span></h3><p>米の旨味、麦・芋の香り、泡盛の熟成香。少量添加で比較。</p></div>
+    <div class="card f"><h3>ブランデー／コニャック／カルヴァドス <span class="tag idea">試作候補</span></h3><p>果実香と樽香。カルヴァドスはリンゴ系のソースと好相性の可能性。</p></div>
+    <div class="card f"><h3>紹興酒／シェリー／ベルモット <span class="tag idea">試作候補</span></h3><p>熟成香、酸化熟成香、ハーブ香。ミニョネットへの少量ブレンドも。</p></div>
+  </div>
+  <p class="note">「実例あり」は牡蠣に直接加える、または牡蠣を入れたショットに酒を注ぐ提供例を確認できたもの。「試作候補」は牡蠣専用の定番として確認したという意味ではありません。<strong>酒類は殺菌目的には使えません。</strong></p>
+</section>
+
+<section id="event">
+  <div class="sec-head"><span class="sec-num">9</span><h2>嗜好探索会での評価方法</h2></div>
+  <ol class="steps">
+    <li><strong>牡蠣単体：</strong>最初に何も加えず、個体の味を確認する。</li>
+    <li><strong>少量添加：</strong>調味料は少量から始め、種類と量を記録する。</li>
+    <li><strong>評価軸：</strong>牡蠣との調和、牡蠣の存在感、香り、酸味、辛味、コク、余韻、意外性、再食意向。</li>
+    <li><strong>比較条件：</strong>可能なら同じ産地・同じロットの牡蠣で比較し、提供順を記録する。</li>
+    <li><strong>記録：</strong>「調味料単体の好み」と「牡蠣に合わせた好み」を分ける。</li>
+  </ol>
+  <div class="notice"><strong>⚠ 安全上の注意</strong>
+    <ul>
+      <li>酒、酢、レモン、ホットソースを加えても、生牡蠣の病原体を安全に除去できるわけではありません。</li>
+      <li>生食用として適切に流通した牡蠣を使い、低温管理・衛生管理を徹底してください。</li>
+      <li>アルコールを直接かけても殺菌目的にはなりません。</li>
+      <li>酒類を使った試食は、未成年者、妊娠中の人、アルコールに弱い人、運転予定の人には提供しないでください。</li>
+    </ul>
+  </div>
+</section>
+
+<section id="sources">
+  <div class="sec-head"><span class="sec-num">10</span><h2>参考資料・実例</h2></div>
+  <div class="sources">
+    <div class="source"><p>ウイスキーを牡蠣に直接垂らす提供例</p><p><a href="https://www.barandrestaurant.com/food-beverage/beyond-barbecue-sauce-new-ways-use-whiskey-kitchen" target="_blank" rel="noopener">Bar &amp; Restaurant — Japanese whisky dispensed via an eye dropper over oysters</a></p></div>
+    <div class="source"><p>スコッチを殻の牡蠣汁に注ぐ方法</p><p><a href="https://thewhiskylist.com.au/guides/pairing-smoky-scotch-whisky-with-oysters/" target="_blank" rel="noopener">The Whisky List — Pairing Smoky Scotch Whisky With Oysters</a></p></div>
+    <div class="source"><p>スコッチ・オイスターショット</p><p><a href="https://www.themanual.com/food-and-drink/nico-scotch-whisky-oyster-shooter/" target="_blank" rel="noopener">The Manual — Oyster Shooters With Scotch</a></p></div>
+    <div class="source"><p>テキーラ／ウォッカを牡蠣に注ぐショット</p><p><a href="https://tourlouisiana.com/recipes/Oyster-Shooters" target="_blank" rel="noopener">Tour Louisiana — Oyster Shooters</a> ／ <a href="https://www.emerils.com/127058/tequila-oyster-shooters" target="_blank" rel="noopener">Emeril — Tequila-oyster Shooters</a></p></div>
+    <div class="source"><p>各種ミニョネット</p><p><a href="https://commerce.iga.net/en/inspiring_recipes/recipes/fresh_oysters_with_4_mignonette_sauces" target="_blank" rel="noopener">IGA — Fresh Oysters with 4 Mignonette Sauces</a></p></div>
+    <div class="source"><p>オーストラリア在来植物を使った牡蠣</p><p><a href="https://www.sbs.com.au/food/the-cook-up-with-adam-liaw/recipe/sydney-rock-oysters-with-native-condiments/q856kjpp6" target="_blank" rel="noopener">SBS — Sydney Rock Oysters with Native Condiments</a></p></div>
+  </div>
+</section>
+
+</div></main>
+
+<footer>この資料は嗜好探索会の企画用ブレインストーミング一覧です。伝統的な牡蠣用調味料と、他料理からの応用・試作候補が混在しています。実際の提供前に少量で味を確認してください。</footer>
+
+<button class="to-top" id="toTop" aria-label="ページの先頭へ">↑</button>
+
+<script>
+(function(){
+  // Mobile card labels from table headers
+  document.querySelectorAll('table').forEach(function(t){
+    var hs=[].map.call(t.querySelectorAll('thead th'),function(th){return th.textContent});
+    t.querySelectorAll('tbody tr').forEach(function(tr){
+      [].forEach.call(tr.children,function(td,i){td.setAttribute('data-label',hs[i]||'')});
+    });
+  });
+  // Split direction cells into chips
+  document.querySelectorAll('td.dir').forEach(function(td){
+    var parts=td.textContent.split('・');
+    if(parts.length>1&&parts.every(function(p){return p.length<=6})){
+      td.innerHTML=parts.map(function(p){return '<span>'+p+'</span>'}).join('');
+      td.setAttribute('data-raw',parts.join('・'));
+    }
+  });
+  // Search filter
+  var q=document.getElementById('q'),cnt=document.getElementById('qcount');
+  var items=[].slice.call(document.querySelectorAll('tbody tr, .card.f'));
+  var secs=[].slice.call(document.querySelectorAll('main section'));
+  q.addEventListener('input',function(){
+    var v=q.value.trim().toLowerCase(),n=0;
+    items.forEach(function(el){
+      var hit=!v||el.textContent.toLowerCase().indexOf(v)>-1;
+      el.classList.toggle('hidden',!hit); if(hit&&v)n++;
+    });
+    secs.forEach(function(s){
+      if(s.id==='event'||s.id==='sources'){s.classList.toggle('hidden',!!v);return;}
+      var its=s.querySelectorAll('tbody tr, .card.f');
+      var any=[].some.call(its,function(e){return !e.classList.contains('hidden')});
+      s.classList.toggle('hidden',!!v&&!any);
+    });
+    cnt.textContent=v?n+'件':'';
+  });
+  // Active nav + to-top
+  var links=[].slice.call(document.querySelectorAll('nav.toc a')),btn=document.getElementById('toTop');
+  function onScroll(){
+    var y=window.scrollY+90,cur=null;
+    secs.forEach(function(s){if(s.offsetTop<=y)cur=s.id});
+    links.forEach(function(a){
+      var on=a.getAttribute('href')==='#'+cur;
+      if(on&&!a.classList.contains('active')){a.scrollIntoView({block:'nearest',inline:'center'})}
+      a.classList.toggle('active',on);
+    });
+    btn.classList.toggle('show',window.scrollY>500);
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  btn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+})();
+</script>
+</body>
+</html>
