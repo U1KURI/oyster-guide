@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>牡蠣を味わう会 12/2</title>
+<style>
+:root{
+  --ink:#1f2b29;--muted:#5d6b67;--line:#dbe3de;--paper:#f6f8f5;--card:#fff;
+  --accent:#2f5d50;--accent-2:#1d3a33;--soft:#eaf2ec;--warn:#c0412f;--now:#fff4d6;--now-line:#c9a227;
+  --radius:14px;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",Meiryo,sans-serif;line-height:1.7;font-size:17px;-webkit-text-size-adjust:100%}
+a{color:#245e50;text-underline-offset:3px}
+.wrap{max-width:760px;margin:auto;padding:0 16px}
+
+header{background:linear-gradient(135deg,#1d3a33 0%,#2f5d50 100%);color:#fff;padding:36px 0 30px}
+.eyebrow{letter-spacing:.16em;text-transform:uppercase;font-size:.75rem;opacity:.8;font-weight:600}
+h1{font-size:clamp(1.7rem,6vw,2.4rem);line-height:1.3;margin:.4rem 0 .9rem;font-weight:800}
+.facts{display:grid;gap:6px;margin:0;padding:0;list-style:none;font-size:1.02rem}
+.facts li{display:flex;gap:10px;align-items:baseline}
+.facts b{flex:0 0 3.2em;font-size:.8rem;opacity:.75;font-weight:700;letter-spacing:.06em}
+.facts a{color:#fff}
+
+main{padding:22px 0 50px}
+section{margin:0 0 26px}
+h2{font-size:1.2rem;margin:0 0 .7rem;padding-bottom:.4rem;border-bottom:2px solid var(--line);color:var(--accent-2)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;box-shadow:0 1px 3px rgba(0,0,0,.03)}
+
+/* Timeline */
+.tl{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.tl li{display:flex;gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;transition:background .2s}
+.tl time{flex:0 0 3.4em;font-weight:800;font-variant-numeric:tabular-nums;color:var(--accent);font-size:1.1rem}
+.tl .t{font-weight:700}
+.tl .s{display:block;font-weight:400;font-size:.86rem;color:var(--muted)}
+.tl li.now{background:var(--now);border-color:var(--now-line);box-shadow:0 0 0 2px var(--now-line) inset}
+.tl li.now time::after{content:"いまここ";display:block;font-size:.62rem;letter-spacing:.05em;color:#8b642c}
+.tl li.done{opacity:.45}
+.round{display:inline-block;background:var(--accent);color:#fff;border-radius:99px;font-size:.78rem;padding:1px 9px;margin-right:6px;vertical-align:2px}
+
+/* Fee */
+.fee{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fee div{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;text-align:center}
+.fee .lbl{font-size:.85rem;color:var(--muted);font-weight:700}
+.fee .yen{font-size:1.8rem;font-weight:800;color:var(--accent-2);line-height:1.3}
+.fee .yen small{font-size:.9rem}
+
+ul.pts{margin:0;padding-left:1.2rem}
+ul.pts li{margin:.2rem 0}
+
+.notice{background:#fff4f1;border:1px solid #f1cfc6;border-left:6px solid var(--warn);border-radius:var(--radius);padding:14px 18px}
+.notice strong{color:#9b2f20}
+
+/* Oyster memo preview */
+.memo{font-size:.95rem}
+.memo table{width:100%;border-collapse:collapse}
+.memo td,.memo th{padding:6px 4px;border-bottom:1px dashed var(--line);text-align:center}
+.memo td:first-child,.memo th:first-child{text-align:left}
+.memo th{font-size:.78rem;color:var(--muted)}
+
+footer{border-top:1px solid var(--line);padding:18px 0 40px;color:var(--muted);font-size:.86rem}
+
+/* Big-screen display mode: ?display */
+body.display{font-size:22px}
+body.display .pre-only{display:none}
+@media print{body{font-size:14px}.tl li.now{box-shadow:none;background:none}}
+</style>
+</head>
+<body>
+
+<header><div class="wrap">
+  <div class="eyebrow">Oyster Tasting Night</div>
+  <h1>🦪 牡蠣を味わう会</h1>
+  <ul class="facts">
+    <li><b>日時</b><span>2026年12月2日（水）18:40 受付／19:00 開始／21:00 おひらき</span></li>
+    <li><b>会場</b><span>CAFE＆HALL Ours（大崎）<br><a href="https://maps.app.goo.gl/b7G6mkFFWP914pte6" target="_blank" rel="noopener">Google マップで見る →</a></span></li>
+    <li><b>内容</b><span>生牡蠣・ちょっとしたお料理・ワイン／日本酒</span></li>
+  </ul>
+</div></header>
+
+<main><div class="wrap">
+
+<section id="flow">
+  <h2>本日の流れ</h2>
+  <ol class="tl" id="tl">
+    <li data-t="18:40"><time>18:40</time><span class="t">受付<span class="s">お料理をつまみながらお待ちください</span></span></li>
+    <li data-t="19:00"><time>19:00</time><span class="t">乾杯・剥き方レクチャー</span></li>
+    <li data-t="19:10"><time>19:10</time><span class="t"><span class="round">①</span>そのまま味わう<span class="s">まずは牡蠣だけの味を</span></span></li>
+    <li data-t="19:30"><time>19:30</time><span class="t"><span class="round">②</span>定番の調味料で<span class="s">レモン・ポン酢・ミニョネットなど</span></span></li>
+    <li data-t="19:55"><time>19:55</time><span class="t">🍽 お料理＆持ち込みワイン紹介</span></li>
+    <li data-t="20:10"><time>20:10</time><span class="t"><span class="round">③</span>変わり種の調味料・お酒で</span></li>
+    <li data-t="20:35"><time>20:35</time><span class="t">おかわりタイム</span></li>
+    <li data-t="20:45"><time>20:45</time><span class="t">🏆 今日のいちばん発表</span></li>
+    <li data-t="21:00"><time>21:00</time><span class="t">おひらき</span></li>
+  </ol>
+</section>
+
+<section id="fee" class="pre-only">
+  <h2>会費</h2>
+  <div class="fee">
+    <div><div class="lbl">一般</div><div class="yen">5,000<small>円</small></div></div>
+    <div><div class="lbl">🍷 1本お持ち込み</div><div class="yen">4,000<small>円</small></div></div>
+  </div>
+  <div class="card" style="margin-top:10px">
+    <ul class="pts">
+      <li>ワイン（または日本酒）の<strong>未開封ボトル1本</strong>で1,000円引き。皆でシェアします。</li>
+      <li>白・泡・ロゼなど、牡蠣に合いそうなものがおすすめです。</li>
+      <li>お持ち込みの方は<strong>お申し込み時にお知らせください</strong>。</li>
+    </ul>
+  </div>
+</section>
+
+<section id="shuck">
+  <h2>🧤 牡蠣は自分で剥きます</h2>
+  <div class="card">
+    <ul class="pts">
+      <li>ナイフ・手袋はご用意しています。最初に剥き方をご説明します。</li>
+      <li><strong>必ず手袋をして、刃は体と反対の方向へ。</strong></li>
+      <li>うまく開かないときは無理せずスタッフへ。</li>
+      <li>お帰りの前にナイフを返却してください。</li>
+    </ul>
+  </div>
+</section>
+
+<section id="memo">
+  <h2>📝 牡蠣メモ</h2>
+  <div class="card memo">
+    <p style="margin:0 0 .6rem">試すたびに <strong>◎ ○ △</strong> をつけるだけ。最後に「今日のいちばん」を集計して発表します。</p>
+    <table>
+      <tr><th></th><th>おいしい</th><th>ふつう</th><th>いまいち</th></tr>
+      <tr><td>① そのまま</td><td>◎</td><td>○</td><td>△</td></tr>
+      <tr><td>② ポン酢</td><td>◎</td><td>○</td><td>△</td></tr>
+      <tr><td>…</td><td></td><td></td><td></td></tr>
+      <tr><td colspan="4" style="text-align:left">🏆 今日のいちばん：＿＿＿＿＿＿</td></tr>
+    </table>
+  </div>
+</section>
+
+<section id="notes">
+  <h2>ご参加にあたって</h2>
+  <div class="card">
+    <ul class="pts">
+      <li class="pre-only">食物アレルギーや苦手な食材がある方は事前にお知らせください。</li>
+      <li>妊娠中の方、体調の優れない方は生牡蠣を控えてください。</li>
+      <li>お酒は20歳以上の方のみ。お車でのご来場はご遠慮ください。</li>
+    </ul>
+  </div>
+  <div class="notice" style="margin-top:10px">
+    <strong>⚠ 酢やお酒をかけても牡蠣が殺菌されるわけではありません。</strong><br>
+    体調に異変を感じたら、すぐにスタッフへお声がけください。
+  </div>
+</section>
+
+<section>
+  <h2>調味料ガイド</h2>
+  <div class="card">当日試す調味料の背景や、世界の牡蠣の食べ方はこちら：<br><a href="./">生牡蠣の調味料・薬味・酒類アイデア一覧 →</a></div>
+</section>
+
+</div></main>
+
+<footer><div class="wrap">牡蠣を味わう会 — 2026年12月2日（水）CAFE＆HALL Ours</div></footer>
+
+<script>
+(function(){
+  // ?display : larger text, hides pre-event-only sections (for the on-site screen)
+  if(/[?&]display\b/.test(location.search))document.body.classList.add('display');
+
+  // Highlight the current step on the event day (Japan time)
+  var items=[].slice.call(document.querySelectorAll('#tl li'));
+  function mins(hm){var p=hm.split(':');return +p[0]*60+ +p[1]}
+  function tick(){
+    var jst=new Date(Date.now()+9*3600e3);
+    var day=jst.toISOString().slice(0,10);
+    var now=jst.getUTCHours()*60+jst.getUTCMinutes();
+    var onDay=day==='2026-12-02'||/[?&]demo\b/.test(location.search);
+    var cur=-1;
+    if(onDay)items.forEach(function(li,i){if(mins(li.dataset.t)<=now)cur=i});
+    items.forEach(function(li,i){
+      li.classList.toggle('now',i===cur);
+      li.classList.toggle('done',cur>-1&&i<cur);
+    });
+  }
+  tick();setInterval(tick,30000);
+})();
+</script>
+</body>
+</html>
