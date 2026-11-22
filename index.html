@@ -54,6 +54,7 @@
 <footer><div class="wrap">牡蠣を味わう会</div></footer>
 
 <script src="assets/events.js"></script>
+<script src="assets/presets.js"></script>
 <script>
 (function(){
   var today=new Date(Date.now()+9*3600e3).toISOString().slice(0,10); // Japan date
@@ -63,11 +64,12 @@
   var W='日月火水木金土';
   function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
   function fmt(d){var p=d.split('-');var w=W[new Date(Date.UTC(+p[0],p[1]-1,+p[2])).getUTCDay()];return +p[0]+'年'+(+p[1])+'月'+(+p[2])+'日（'+w+'）'}
+  function venueName(k){var v=(window.VENUES||{})[k];return v?esc(v.name)+(v.area?'（'+esc(v.area)+'）':''):esc(k)}
   function card(e,isPast){
     return '<li><a class="ev'+(isPast?' past':'')+'" href="'+esc(e.path)+'">'+
       '<span class="no"><small>VOL.</small>'+esc(e.vol)+'</span>'+
       '<span class="body"><span class="ttl">'+esc(e.title||('vol.'+e.vol))+'</span><br>'+
-      '<span class="meta">'+fmt(e.date)+(e.time?' '+esc(e.time):'')+(e.venue?'<br>'+esc(e.venue):'')+'</span></span>'+
+      '<span class="meta">'+fmt(e.date)+(e.start?' '+esc(e.start)+'–'+esc(e.end||''):'')+'<br>'+venueName(e.venue)+'</span></span>'+
       '<span class="badge">'+(isPast?'開催済み':(e===next[0]?'次回':'予定'))+'</span></a></li>';
   }
   document.getElementById('next-list').innerHTML=next.length?next.map(function(e){return card(e,false)}).join(''):'<li class="empty">次回の日程は準備中です。</li>';

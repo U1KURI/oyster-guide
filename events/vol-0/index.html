@@ -6,7 +6,8 @@
 <title>牡蠣を味わう会 vol.0</title>
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
-<body data-date="2026-12-02">
+<!-- 日時・会場・会費は assets/events.js（vol: 0）と assets/presets.js から自動で入ります -->
+<body data-vol="0">
 
 <nav class="sitebar"><div class="wrap">
   <a class="home" href="../../">🦪 牡蠣を味わう会</a>
@@ -16,16 +17,17 @@
 
 <header class="hero"><div class="wrap">
   <div class="eyebrow">Oyster Tasting Night</div>
-  <h1><span class="vol">vol.0</span>準備会</h1>
+  <h1 data-fill="title"></h1>
   <ul class="facts">
-    <li><b>日時</b><span>2026年12月2日（水）18:40 受付／19:00 開始／21:00 おひらき</span></li>
-    <li><b>会場</b><span>CAFE＆HALL Ours（大崎）<br><a href="https://maps.app.goo.gl/b7G6mkFFWP914pte6" target="_blank" rel="noopener">Google マップで見る →</a></span></li>
+    <li><b>日時</b><span data-fill="when"></span></li>
+    <li><b>会場</b><span data-fill="where"></span></li>
     <li><b>内容</b><span>生牡蠣・ちょっとしたお料理・ワイン／日本酒</span></li>
   </ul>
 </div></header>
 
 <main><div class="wrap">
 
+<!-- この回のタイムテーブル（回ごとに編集） -->
 <section id="flow">
   <h2>本日の流れ</h2>
   <ol class="tl">
@@ -35,77 +37,25 @@
     <li data-t="19:30"><time>19:30</time><span class="t"><span class="round">②</span>定番の調味料で<span class="s">レモン・ポン酢・ミニョネットなど</span></span></li>
     <li data-t="19:55"><time>19:55</time><span class="t">🍽 お料理＆持ち込みワイン紹介</span></li>
     <li data-t="20:10"><time>20:10</time><span class="t"><span class="round">③</span>変わり種の調味料・お酒で</span></li>
-    <li data-t="20:35"><time>20:35</time><span class="t">おかわりタイム</span></li>
+    <li data-t="20:35"><time>20:35</time><span class="t">おかわりタイム・🏆 投票</span></li>
     <li data-t="20:45"><time>20:45</time><span class="t">🏆 今日のいちばん発表</span></li>
     <li data-t="21:00"><time>21:00</time><span class="t">おひらき</span></li>
   </ol>
 </section>
 
-<section id="fee" class="pre-only">
-  <h2>会費</h2>
-  <div class="fee">
-    <div><div class="lbl">一般</div><div class="yen">5,000<small>円</small></div></div>
-    <div><div class="lbl">🍷 1本お持ち込み</div><div class="yen">4,000<small>円</small></div></div>
-  </div>
-  <div class="card mt">
-    <ul class="pts">
-      <li>ワイン（または日本酒）の<strong>未開封ボトル1本</strong>で1,000円引き。皆でシェアします。</li>
-      <li>白・泡・ロゼなど、牡蠣に合いそうなものがおすすめです。</li>
-      <li>お持ち込みの方は<strong>お申し込み時にお知らせください</strong>。</li>
-    </ul>
-  </div>
-</section>
-
-<section id="shuck">
-  <h2>🧤 牡蠣は自分で剥きます</h2>
-  <div class="card">
-    <ul class="pts">
-      <li>ナイフ・手袋はご用意しています。最初に剥き方をご説明します。</li>
-      <li><strong>必ず手袋をして、刃は体と反対の方向へ。</strong></li>
-      <li>うまく開かないときは無理せずスタッフへ。</li>
-      <li>お帰りの前にナイフを返却してください。</li>
-    </ul>
-  </div>
-</section>
-
-<section id="memo">
-  <h2>📝 牡蠣メモ</h2>
-  <div class="card memo">
-    <p style="margin:0 0 .6rem">試すたびに <strong>◎ ○ △</strong> をつけるだけ。最後に「今日のいちばん」を集計して発表します。</p>
-    <table>
-      <tr><th></th><th>おいしい</th><th>ふつう</th><th>いまいち</th></tr>
-      <tr><td>① そのまま</td><td>◎</td><td>○</td><td>△</td></tr>
-      <tr><td>② ポン酢</td><td>◎</td><td>○</td><td>△</td></tr>
-      <tr><td>…</td><td></td><td></td><td></td></tr>
-      <tr><td colspan="4" style="text-align:left">🏆 今日のいちばん：＿＿＿＿＿＿</td></tr>
-    </table>
-  </div>
-</section>
-
-<section id="notes">
-  <h2>ご参加にあたって</h2>
-  <div class="card">
-    <ul class="pts">
-      <li class="pre-only">食物アレルギーや苦手な食材がある方は事前にお知らせください。</li>
-      <li>妊娠中の方、体調の優れない方は生牡蠣を控えてください。</li>
-      <li>お酒は20歳以上の方のみ。お車でのご来場はご遠慮ください。</li>
-    </ul>
-  </div>
-  <div class="notice mt">
-    <strong>⚠ 酢やお酒をかけても牡蠣が殺菌されるわけではありません。</strong><br>
-    体調に異変を感じたら、すぐにスタッフへお声がけください。
-  </div>
-</section>
-
-<section class="pre-only">
-  <h2>調味料ガイド</h2>
-  <div class="card">当日試す調味料の背景や、世界の牡蠣の食べ方はこちら：<br><a href="../../guide/">生牡蠣の調味料・薬味・酒類アイデア一覧 →</a></div>
-</section>
+<!-- 共通パーツ（assets/presets.js） -->
+<section data-block="fee" class="pre-only"></section>
+<section data-block="shuck"></section>
+<section data-block="memo"></section>
+<section data-block="notes"></section>
+<section data-block="guide" class="pre-only"></section>
 
 </div></main>
 
-<footer><div class="wrap">牡蠣を味わう会 vol.0 準備会 — 2026年12月2日（水）CAFE＆HALL Ours</div></footer>
+<footer><div class="wrap" data-fill="footer"></div></footer>
 
+<script src="../../assets/events.js"></script>
+<script src="../../assets/presets.js"></script>
 <script src="../../assets/event.js"></script>
 </body>
 </html>

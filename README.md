@@ -15,13 +15,25 @@
 ## 新しい回を追加する手順
 
 1. `events/vol-0/` をフォルダごとコピーして `events/vol-1/` を作る
-2. `events/vol-1/index.html` を編集
-   - `<body data-date="YYYY-MM-DD">` の日付（当日の「いまここ」表示に使う）
-   - タイトル、日時、会場、タイムテーブル、会費など
+2. `events/vol-1/index.html` の `<body data-vol="0">` を `data-vol="1"` にし、タイムテーブルを編集
 3. `assets/events.js` に1件追加
 
    ```js
-   { vol: 1, title: "", date: "2027-01-20", time: "19:00–21:00", venue: "", path: "events/vol-1/" }
+   { vol: 1, title: "", date: "2027-01-20", open: "18:40", start: "19:00", end: "21:00",
+     venue: "ours", fee: "std5000", path: "events/vol-1/" }
    ```
 
-トップページの「次回」「これまで」は日付から自動で振り分けられます。
+日時・会場・会費・共通パーツはページに自動で入ります。トップページの「次回」「これまで」も日付で自動振り分けです。
+
+## 共通パーツ（`assets/presets.js`）
+
+| 名前 | 内容 |
+|---|---|
+| `VENUES` | 会場のパターン（名前・エリア・地図URL）。新しい会場は1件追加して `venue` にキーを指定 |
+| `FEES` | 会費のパターン（料金プランと注意書き）。新しい料金体系は1件追加して `fee` にキーを指定 |
+| `BLOCKS.shuck` | 剥くときの注意（全回共通） |
+| `BLOCKS.memo` | 牡蠣メモの説明 |
+| `BLOCKS.notes` | 参加にあたっての注意・安全 |
+| `BLOCKS.guide` | 調味料ガイドへのリンク |
+
+ページ内では `<section data-block="shuck"></section>` のように置くと挿入されます。
