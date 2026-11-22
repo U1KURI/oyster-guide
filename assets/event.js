@@ -10,19 +10,40 @@
 
   var vol=body.getAttribute('data-vol');
   var ev=(window.EVENTS||[]).filter(function(e){return String(e.vol)===vol})[0]||{};
-  var venue=(window.VENUES||{})[ev.venue]||{};
   var fee=(window.FEES||{})[ev.fee];
   var title='vol.'+ev.vol+(ev.title?' '+ev.title:'');
+  var VL=window.VenueLock;
 
   // Hero, title, footer
+  var set=function(sel,html){var el=document.querySelector(sel);if(el)el.innerHTML=html};
+  function showVenue(v){
+    set('[data-fill="where"]',esc(v.name||'')+(v.area?'（'+esc(v.area)+'）':'')+
+      (v.map?'<br><a href="'+esc(v.map)+'" target="_blank" rel="noopener">Google マップで見る →</a>':''));
+    set('[data-fill="footer"]','牡蠣を味わう会 '+esc(title)+' — '+fmtDate(ev.date)+' '+esc(v.name||''));
+  }
+  function showLock(){
+    set('[data-fill="where"]',
+      '<form class="unlock" autocomplete="off">'+
+      '<span class="lock-msg">🔒 参加者の方には合言葉をお知らせしています</span>'+
+      '<span class="unlock-row"><input type="password" aria-label="合言葉" placeholder="合言葉">'+
+      '<button type="submit">表示</button></span><span class="unlock-err" aria-live="polite"></span></form>');
+    var f=document.querySelector('form.unlock');
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      var inp=f.querySelector('input'),btn=f.querySelector('button'),err=f.querySelector('.unlock-err');
+      btn.disabled=true;err.textContent='確認中…';
+      VL.unlock(ev.venue,inp.value).then(function(v){
+        if(v){showVenue(v)}else{btn.disabled=false;err.textContent='合言葉が違います';inp.select()}
+      },function(){btn.disabled=false;err.textContent='このブラウザでは表示できません'});
+    });
+  }
   if(ev.date){
     document.title='牡蠣を味わう会 '+title;
-    var set=function(sel,html){var el=document.querySelector(sel);if(el)el.innerHTML=html};
     set('[data-fill="title"]','<span class="vol">vol.'+esc(ev.vol)+'</span>'+esc(ev.title||''));
     set('[data-fill="when"]',fmtDate(ev.date)+' '+(ev.open?esc(ev.open)+' 受付／':'')+esc(ev.start)+' 開始／'+esc(ev.end)+' おひらき');
-    set('[data-fill="where"]',esc(venue.name||ev.venue||'')+(venue.area?'（'+esc(venue.area)+'）':'')+
-      (venue.map?'<br><a href="'+esc(venue.map)+'" target="_blank" rel="noopener">Google マップで見る →</a>':''));
-    set('[data-fill="footer"]','牡蠣を味わう会 '+esc(title)+' — '+fmtDate(ev.date)+' '+esc(venue.name||''));
+    set('[data-fill="footer"]','牡蠣を味わう会 '+esc(title)+' — '+fmtDate(ev.date));
+    var v=VL?VL.get(ev.venue):((window.VENUES||{})[ev.venue]||null);
+    if(v)showVenue(v);else if(VL&&VL.isLocked(ev.venue))showLock();
   }
 
   // Fee

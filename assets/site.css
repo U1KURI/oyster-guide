@@ -83,3 +83,13 @@ footer{border-top:1px solid var(--line);padding:18px 0 40px;color:var(--muted);f
 body.display{font-size:22px}
 body.display .pre-only,body.display .sitebar{display:none}
 @media print{body{font-size:14px}.sitebar{display:none}.tl li.now{box-shadow:none;background:none}}
+
+/* Passphrase form for locked venues (inside the hero) */
+.unlock{display:flex;flex-direction:column;gap:6px}
+.lock-msg{font-size:.9rem;opacity:.9}
+.unlock-row{display:flex;gap:6px;max-width:320px}
+.unlock input{flex:1;min-width:0;font-size:16px;padding:7px 10px;border-radius:8px;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.95);color:var(--ink)}
+.unlock button{flex:0 0 auto;font-size:.95rem;font-weight:700;padding:7px 14px;border-radius:8px;border:0;background:#fff;color:var(--accent-2);cursor:pointer}
+.unlock button:disabled{opacity:.6}
+.unlock-err{font-size:.85rem;color:#ffd9cf;min-height:1.2em}
+.ev .lock{color:var(--muted)}

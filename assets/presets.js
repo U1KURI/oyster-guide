@@ -1,11 +1,16 @@
 // Shared content for every event page.
 // Venues and fee plans are registered once here and picked by key in assets/events.js.
 
+// A venue is either public  { name, area, map }
+// or passphrase-locked      { locked: { iter, salt, iv, ct } }  (made with tools/lock-venue.mjs)
 window.VENUES = {
-  ours: {
-    name: "CAFE＆HALL Ours",
-    area: "大崎",
-    map: "https://maps.app.goo.gl/b7G6mkFFWP914pte6"
+  v0: {
+    locked: {
+      iter: 300000,
+      salt: "Wm6RMz4lse7oppApG9hsGg==",
+      iv: "JKx8QJ/VSI5TT2ME",
+      ct: "vn94RqGRk8cFda4axhi/GWE23FSL2tVZswRrVgkQzvp4fSiyucblNXUXvxKZTCOI2HzHzSiNtET7n1HoYnoweZ7yocT3ZHPNFH+a2DRIUk3AaCoTkJaguxWtVYDEFm4Hk1Utx5C8AJdECdrg7Q=="
+    }
   }
   // ,other: { name: "", area: "", map: "" }
 };

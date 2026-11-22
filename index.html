@@ -55,6 +55,7 @@
 
 <script src="assets/events.js"></script>
 <script src="assets/presets.js"></script>
+<script src="assets/venue.js"></script>
 <script>
 (function(){
   var today=new Date(Date.now()+9*3600e3).toISOString().slice(0,10); // Japan date
@@ -64,7 +65,11 @@
   var W='日月火水木金土';
   function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
   function fmt(d){var p=d.split('-');var w=W[new Date(Date.UTC(+p[0],p[1]-1,+p[2])).getUTCDay()];return +p[0]+'年'+(+p[1])+'月'+(+p[2])+'日（'+w+'）'}
-  function venueName(k){var v=(window.VENUES||{})[k];return v?esc(v.name)+(v.area?'（'+esc(v.area)+'）':''):esc(k)}
+  function venueName(k){
+    var VL=window.VenueLock,v=VL?VL.get(k):(window.VENUES||{})[k];
+    if(v&&!v.locked)return esc(v.name)+(v.area?'（'+esc(v.area)+'）':'');
+    return '<span class="lock">🔒 会場は参加者にお知らせしています</span>';
+  }
   function card(e,isPast){
     return '<li><a class="ev'+(isPast?' past':'')+'" href="'+esc(e.path)+'">'+
       '<span class="no"><small>VOL.</small>'+esc(e.vol)+'</span>'+

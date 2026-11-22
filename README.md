@@ -20,7 +20,7 @@
 
    ```js
    { vol: 1, title: "", date: "2027-01-20", open: "18:40", start: "19:00", end: "21:00",
-     venue: "ours", fee: "std5000", path: "events/vol-1/" }
+     venue: "v0", fee: "std5000", path: "events/vol-1/" }
    ```
 
 日時・会場・会費・共通パーツはページに自動で入ります。トップページの「次回」「これまで」も日付で自動振り分けです。
@@ -37,3 +37,14 @@
 | `BLOCKS.guide` | 調味料ガイドへのリンク |
 
 ページ内では `<section data-block="shuck"></section>` のように置くと挿入されます。
+
+## 会場を合言葉で隠す
+
+会場情報（名前・エリア・地図URL）は合言葉で暗号化して `assets/presets.js` に置けます。合言葉そのものはリポジトリに保存しません。
+
+```sh
+OYSTER_PASS='合言葉' node tools/lock-venue.mjs '{"name":"会場名","area":"エリア","map":"https://…"}'
+```
+
+出力された `{ iter, salt, iv, ct }` を `VENUES` に `key: { locked: { … } }` として貼り付け、`events.js` の `venue` にそのキーを指定します。
+ページでは会場欄に合言葉の入力欄が出て、正しい合言葉を入れるとそのブラウザでは以後も表示されます。

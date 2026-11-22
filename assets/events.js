@@ -9,10 +9,10 @@ window.EVENTS = [
     open: "18:40",        // 受付
     start: "19:00",
     end: "21:00",
-    venue: "ours",
+    venue: "v0",
     fee: "std5000",
     path: "events/vol-0/"
   }
   // ,{ vol: 1, title: "", date: "2027-01-20", open: "18:40", start: "19:00", end: "21:00",
-  //    venue: "ours", fee: "std5000", path: "events/vol-1/" }
+  //    venue: "v0", fee: "std5000", path: "events/vol-1/" }
 ];
