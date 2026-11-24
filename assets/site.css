@@ -93,3 +93,17 @@ body.display .pre-only,body.display .sitebar{display:none}
 .unlock button:disabled{opacity:.6}
 .unlock-err{font-size:.85rem;color:#ffd9cf;min-height:1.2em}
 .ev .lock{color:var(--muted)}
+
+/* Oyster (Amabe) block */
+.oyster img{display:block;width:100%;height:auto;border-radius:10px}
+.oy-hero{margin:0 0 12px}
+.oy-name{margin:0;font-size:1.2rem;font-weight:800;color:var(--accent-2)}
+.oy-lead{margin:.1rem 0 .6rem;color:var(--muted)}
+.oy-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0 0}
+.oy-grid figure{margin:0}
+.oy-grid figcaption{font-size:.78rem;color:var(--muted);margin-top:3px}
+.credit{margin:10px 0 0;font-size:.8rem;color:var(--muted)}
+.feature-photo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:16px;align-items:center}
+.feature-photo img{display:block;width:100%;height:auto;border-radius:10px}
+.feature-photo p{margin:.2rem 0}
+@media(max-width:560px){.feature-photo{grid-template-columns:1fr}}

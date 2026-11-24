@@ -34,9 +34,21 @@ window.FEES = {
 // Put <section data-block="KEY"></section> in a page to insert one.
 window.BLOCKS = {
   oyster:
-    '<h2>🦪 今回の牡蠣</h2><div class="card">' +
-    '<p style="margin:0;font-size:1.15rem;font-weight:800;color:var(--accent-2)">徳島県産 あまべ牡蠣</p>' +
-    '<p style="margin:.3rem 0 0"><a href="https://reblue-k.com/amabe-oyster/" target="_blank" rel="noopener">あまべ牡蠣について（生産者のページ）→</a></p>' +
+    '<h2>🦪 今回の牡蠣</h2><div class="card oyster">' +
+    '<img class="oy-hero" src="{root}assets/img/amabe/oysters-plate.jpg" alt="氷の上に並んだあまべ牡蠣" loading="lazy">' +
+    '<p class="oy-name">徳島県産 あまべ牡蠣</p>' +
+    '<p class="oy-lead">太陽と海の国・徳島で育った、小粒なプレミアムオイスター。</p>' +
+    '<ul class="pts">' +
+    '<li><strong>育つ海：</strong>徳島県最南端・海陽町の那佐湾。サンゴも生息する透明度の高い太平洋に、山や森、清流のミネラルが流れ込みます。</li>' +
+    '<li><strong>小粒な理由：</strong>一口で上品に味わえるサイズ。小粒でもふっくらと厚みがあり、すっきりとした味わいと豊かな余韻が特徴です。</li>' +
+    '<li><strong>育て方：</strong>バスケットの中で牡蠣を転がす「シングルシードバスケット養殖」で、丸みのある美しい形に育ちます。</li>' +
+    '</ul>' +
+    '<div class="oy-grid">' +
+    '<figure><img src="{root}assets/img/amabe/kaiyo-sea.jpg" alt="海陽町の海と牡蠣の養殖いかだ" loading="lazy"><figcaption>海陽町の海</figcaption></figure>' +
+    '<figure><img src="{root}assets/img/amabe/basket-boat.jpg" alt="夕暮れのバスケット養殖の作業" loading="lazy"><figcaption>バスケット養殖の作業</figcaption></figure>' +
+    '</div>' +
+    '<p class="credit">写真提供：リブル（<a href="https://reblue-k.com/amabe-oyster/" target="_blank" rel="noopener">reblue-k.com</a>）　' +
+    '<a href="https://reblue-k.com/amabe-oyster/" target="_blank" rel="noopener">あまべ牡蠣について →</a></p>' +
     '</div>',
 
   shuck:
