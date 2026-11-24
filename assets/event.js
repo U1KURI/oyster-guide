@@ -19,7 +19,7 @@
   function showVenue(v){
     set('[data-fill="where"]',esc(v.name||'')+(v.area?'（'+esc(v.area)+'）':'')+
       (v.map?'<br><a href="'+esc(v.map)+'" target="_blank" rel="noopener">Google マップで見る →</a>':''));
-    set('[data-fill="footer"]','牡蠣を味わう会 '+esc(title)+' — '+fmtDate(ev.date)+' '+esc(v.name||''));
+    set('[data-fill="footer"]','100個の牡蠣&ワインの会 '+esc(title)+' — '+fmtDate(ev.date)+' '+esc(v.name||''));
   }
   function showLock(){
     set('[data-fill="where"]',
@@ -38,10 +38,10 @@
     });
   }
   if(ev.date){
-    document.title='牡蠣を味わう会 '+title;
+    document.title='100個の牡蠣&ワインの会 '+title;
     set('[data-fill="title"]','<span class="vol">vol.'+esc(ev.vol)+'</span>'+esc(ev.title||''));
     set('[data-fill="when"]',fmtDate(ev.date)+' '+(ev.open?esc(ev.open)+' 受付／':'')+esc(ev.start)+' 開始／'+esc(ev.end)+' おひらき');
-    set('[data-fill="footer"]','牡蠣を味わう会 '+esc(title)+' — '+fmtDate(ev.date));
+    set('[data-fill="footer"]','100個の牡蠣&ワインの会 '+esc(title)+' — '+fmtDate(ev.date));
     var v=VL?VL.get(ev.venue):((window.VENUES||{})[ev.venue]||null);
     if(v)showVenue(v);else if(VL&&VL.isLocked(ev.venue))showLock();
   }

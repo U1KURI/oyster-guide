@@ -1,4 +1,4 @@
-# 牡蠣を味わう会
+# 100個の牡蠣&ワインの会
 
 公開URL: https://u1kuri.github.io/oyster-guide/
 
