@@ -33,6 +33,12 @@ window.FEES = {
 // Sections that are identical on every event page.
 // Put <section data-block="KEY"></section> in a page to insert one.
 window.BLOCKS = {
+  oyster:
+    '<h2>🦪 今回の牡蠣</h2><div class="card">' +
+    '<p style="margin:0;font-size:1.15rem;font-weight:800;color:var(--accent-2)">徳島県産 あまべ牡蠣</p>' +
+    '<p style="margin:.3rem 0 0"><a href="https://reblue-k.com/amabe-oyster/" target="_blank" rel="noopener">あまべ牡蠣について（生産者のページ）→</a></p>' +
+    '</div>',
+
   shuck:
     '<h2>🧤 牡蠣は自分で剥きます</h2><div class="card"><ul class="pts">' +
     '<li>ナイフ・手袋はご用意しています。最初に剥き方をご説明します。</li>' +
