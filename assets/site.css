@@ -107,3 +107,12 @@ body.display .pre-only,body.display .sitebar{display:none}
 .feature-photo img{display:block;width:100%;height:auto;border-radius:10px}
 .feature-photo p{margin:.2rem 0}
 @media(max-width:560px){.feature-photo{grid-template-columns:1fr}}
+
+/* Hero with photo background (Amabe sea, credited in .hero-credit) */
+header.hero.photo{position:relative;background:
+  linear-gradient(180deg,rgba(13,32,28,.45) 0%,rgba(13,32,28,.72) 100%),
+  url(img/amabe/kaiyo-sea.jpg) center 40%/cover no-repeat,#1d3a33;
+  padding:56px 0 40px}
+header.hero.photo h1,header.hero.photo .facts,header.hero.photo p{text-shadow:0 1px 8px rgba(0,0,0,.45)}
+.hero-credit{position:absolute;right:12px;bottom:6px;font-size:.66rem;color:rgba(255,255,255,.75);text-shadow:0 1px 3px rgba(0,0,0,.6)}
+.hero-credit a{color:inherit}
