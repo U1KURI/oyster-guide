@@ -38,8 +38,8 @@
     });
   }
   if(ev.date){
-    document.title='100個の牡蠣&ワインの会 '+title;
-    set('[data-fill="title"]','<span class="vol">vol.'+esc(ev.vol)+'</span>'+esc(ev.title||''));
+    document.title='牡蠣×ワイン｜100個の牡蠣&ワインの会 '+title;
+    set('[data-fill="title"]','<span class="vol">vol.'+esc(ev.vol)+'</span>100個の牡蠣&amp;ワインの会'+(ev.title?' '+esc(ev.title):''));
     set('[data-fill="when"]',fmtDate(ev.date)+' '+(ev.open?esc(ev.open)+' 受付／':'')+esc(ev.start)+' 開始／'+esc(ev.end)+' おひらき');
     set('[data-fill="footer"]','100個の牡蠣&ワインの会 '+esc(title)+' — '+fmtDate(ev.date));
     var v=VL?VL.get(ev.venue):((window.VENUES||{})[ev.venue]||null);

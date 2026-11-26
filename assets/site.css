@@ -1,60 +1,84 @@
-/* Shared styles for the series top page and every event page */
+/* Shared styles for the series top page and every event page.
+   Look: deep warm black + gold, mincho headings, script accent (matches the event flyer). */
 :root{
-  --ink:#1f2b29;--muted:#5d6b67;--line:#dbe3de;--paper:#f6f8f5;--card:#fff;
-  --accent:#2f5d50;--accent-2:#1d3a33;--soft:#eaf2ec;--warn:#c0412f;--now:#fff4d6;--now-line:#c9a227;--gold:#8b642c;
-  --radius:14px;
+  --bg:#14100c;--bg-2:#1b1510;--card:#211a14;--card-2:#2a2119;
+  --ink:#f3e9d8;--muted:#b9a990;--line:rgba(212,175,106,.24);
+  --gold:#d4af6a;--gold-2:#f1d9a0;--gold-3:#a8803f;
+  --gold-grad:linear-gradient(180deg,#f8e7bd 0%,#d9b46b 55%,#b58a45 100%);
+  --warn:#e8836a;--radius:14px;
+  --serif:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --script:"Great Vibes",cursive;
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",Meiryo,sans-serif;line-height:1.7;font-size:17px;-webkit-text-size-adjust:100%}
-a{color:#245e50;text-underline-offset:3px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",Meiryo,sans-serif;line-height:1.75;font-size:17px;-webkit-text-size-adjust:100%}
+a{color:var(--gold-2);text-underline-offset:3px;text-decoration-color:rgba(241,217,160,.5)}
 .wrap{max-width:760px;margin:auto;padding:0 16px}
+strong{color:var(--gold-2)}
 
 /* Site bar */
-.sitebar{background:var(--accent-2);color:#cfe0d8;font-size:.82rem}
-.sitebar .wrap{display:flex;gap:16px;align-items:center;padding-top:8px;padding-bottom:8px;overflow-x:auto;white-space:nowrap}
-.sitebar a{color:#fff;text-decoration:none;font-weight:600}
-.sitebar a.home{margin-right:auto}
+.sitebar{background:#0b0806;border-bottom:1px solid var(--line);font-size:.82rem}
+.sitebar .wrap{display:flex;gap:16px;align-items:center;padding-top:9px;padding-bottom:9px;overflow-x:auto;white-space:nowrap}
+.sitebar a{color:var(--gold-2);text-decoration:none;font-weight:600;letter-spacing:.04em}
+.sitebar a.home{margin-right:auto;font-family:var(--serif);font-weight:700}
 
 /* Hero */
-header.hero{background:linear-gradient(135deg,#1d3a33 0%,#2f5d50 100%);color:#fff;padding:34px 0 30px}
-.eyebrow{letter-spacing:.16em;text-transform:uppercase;font-size:.75rem;opacity:.8;font-weight:600}
-h1{font-size:clamp(1.7rem,6vw,2.4rem);line-height:1.3;margin:.4rem 0 .9rem;font-weight:800}
-.vol{display:inline-block;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);border-radius:99px;padding:1px 12px;font-size:.85rem;font-weight:700;margin-right:6px;vertical-align:middle}
-.hero p{margin:0;color:#dfeae4;max-width:620px}
-.facts{display:grid;gap:6px;margin:0;padding:0;list-style:none;font-size:1.02rem}
-.facts li{display:flex;gap:10px;align-items:baseline}
-.facts b{flex:0 0 3.2em;font-size:.8rem;opacity:.75;font-weight:700;letter-spacing:.06em}
-.facts a{color:#fff}
+header.hero{position:relative;color:#fff;padding:52px 0 40px;text-align:center;background:var(--bg-2)}
+header.hero.photo{background:
+  radial-gradient(ellipse at 50% 30%,rgba(20,14,8,.35) 0%,rgba(20,14,8,.78) 75%),
+  linear-gradient(180deg,rgba(20,14,8,.35) 0%,rgba(20,14,8,.9) 100%),
+  url(img/amabe/oysters-plate.jpg) center 45%/cover no-repeat,var(--bg-2)}
+header.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.script{font-family:var(--script);font-size:clamp(2.1rem,9vw,3.3rem);line-height:1.1;color:var(--gold-2);text-shadow:0 2px 12px rgba(0,0,0,.6)}
+.script .x{font-family:var(--serif);font-size:.55em;vertical-align:.2em;margin:0 .25em;color:var(--gold)}
+h1.catch{font-family:var(--serif);font-weight:800;font-size:clamp(2.6rem,13vw,4.4rem);line-height:1.15;margin:.15em 0 .1em;letter-spacing:.04em;color:#fff;text-shadow:0 3px 18px rgba(0,0,0,.7)}
+h1.catch .x{color:var(--gold);font-weight:400;font-size:.7em;margin:0 .12em;vertical-align:.08em}
+.series{font-family:var(--serif);font-weight:700;font-size:clamp(1.05rem,4.4vw,1.35rem);letter-spacing:.06em;color:var(--gold-2);margin:.2rem 0 0}
+.series .vol{display:inline-block;font-family:inherit;border:1px solid var(--gold);color:var(--gold-2);border-radius:4px;padding:0 10px;margin:0 .4em 0 0;font-size:.85em;vertical-align:.1em}
+.ribbon{display:flex;align-items:center;gap:12px;justify-content:center;margin:20px auto 22px;max-width:560px;font-family:var(--serif);font-size:clamp(.95rem,4vw,1.15rem);letter-spacing:.08em;color:#f4ead6}
+.ribbon::before,.ribbon::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.ribbon::after{background:linear-gradient(90deg,var(--gold),transparent)}
+.ribbon b{font-size:1.3em;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent;margin:0 .15em}
+.hero p.lead{margin:0 auto;color:#e8dcc6;max-width:560px;text-shadow:0 1px 8px rgba(0,0,0,.6)}
+.hero-credit{position:absolute;right:12px;bottom:6px;font-size:.66rem;color:rgba(255,255,255,.65)}
+.hero-credit a{color:inherit}
 
-main{padding:22px 0 50px}
-section{margin:0 0 26px}
-h2{font-size:1.2rem;margin:0 0 .7rem;padding-bottom:.4rem;border-bottom:2px solid var(--line);color:var(--accent-2)}
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;box-shadow:0 1px 3px rgba(0,0,0,.03)}
+/* Facts (flyer style: boxed labels) */
+.facts{display:grid;gap:12px;margin:0 auto;padding:0;list-style:none;font-size:1.02rem;text-align:left;max-width:560px}
+.facts li{display:flex;gap:14px;align-items:baseline}
+.facts b{flex:0 0 auto;min-width:4.2em;text-align:center;font-family:var(--serif);font-size:.85rem;font-weight:700;letter-spacing:.2em;padding:2px 6px 2px 9px;border:1px solid var(--gold);color:var(--gold-2);background:rgba(0,0,0,.35)}
+.facts span{font-family:var(--serif);font-weight:600;text-shadow:0 1px 8px rgba(0,0,0,.7)}
+.facts a{color:var(--gold-2)}
+
+main{padding:30px 0 50px}
+section{margin:0 0 34px}
+h2{font-family:var(--serif);font-size:1.3rem;font-weight:700;letter-spacing:.06em;margin:0 0 .8rem;padding-bottom:.45rem;color:var(--gold-2);border-bottom:0;background:linear-gradient(90deg,var(--gold),transparent) left bottom/100% 1px no-repeat}
+.card{background:linear-gradient(180deg,var(--card-2),var(--card));border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;box-shadow:0 6px 24px rgba(0,0,0,.25)}
 .mt{margin-top:10px}
 
 /* Timeline */
 .tl{list-style:none;margin:0;padding:0;display:grid;gap:8px}
 .tl li{display:flex;gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;transition:background .2s}
-.tl time{flex:0 0 3.4em;font-weight:800;font-variant-numeric:tabular-nums;color:var(--accent);font-size:1.1rem}
+.tl time{flex:0 0 3.4em;font-family:var(--serif);font-weight:800;font-variant-numeric:tabular-nums;color:var(--gold);font-size:1.15rem}
 .tl .t{font-weight:700}
 .tl .s{display:block;font-weight:400;font-size:.86rem;color:var(--muted)}
-.tl li.now{background:var(--now);border-color:var(--now-line);box-shadow:0 0 0 2px var(--now-line) inset}
-.tl li.now time::after{content:"いまここ";display:block;font-size:.62rem;letter-spacing:.05em;color:var(--gold)}
-.tl li.done{opacity:.45}
-.round{display:inline-block;background:var(--accent);color:#fff;border-radius:99px;font-size:.78rem;padding:1px 9px;margin-right:6px;vertical-align:2px}
+.tl li.now{background:rgba(212,175,106,.14);border-color:var(--gold);box-shadow:0 0 0 1px var(--gold) inset,0 0 22px rgba(212,175,106,.18)}
+.tl li.now time::after{content:"いまここ";display:block;font-family:inherit;font-size:.62rem;letter-spacing:.05em;color:var(--gold-2)}
+.tl li.done{opacity:.4}
+.round{display:inline-block;border:1px solid var(--gold);color:var(--gold-2);border-radius:99px;font-size:.78rem;padding:0 9px;margin-right:6px;vertical-align:2px}
 
 /* Fee */
 .fee{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.fee div{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;text-align:center}
+.fee div{background:linear-gradient(180deg,var(--card-2),var(--card));border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;text-align:center}
 .fee .lbl{font-size:.85rem;color:var(--muted);font-weight:700}
-.fee .yen{font-size:1.8rem;font-weight:800;color:var(--accent-2);line-height:1.3}
+.fee .yen{font-family:var(--serif);font-size:2rem;font-weight:800;line-height:1.3;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .fee .yen small{font-size:.9rem}
 
 ul.pts{margin:0;padding-left:1.2rem}
 ul.pts li{margin:.2rem 0}
+ul.pts li::marker{color:var(--gold)}
 
-.notice{background:#fff4f1;border:1px solid #f1cfc6;border-left:6px solid var(--warn);border-radius:var(--radius);padding:14px 18px}
-.notice strong{color:#9b2f20}
+.notice{background:rgba(232,131,106,.08);border:1px solid rgba(232,131,106,.35);border-left:5px solid var(--warn);border-radius:var(--radius);padding:14px 18px}
+.notice strong{color:#ffb39f}
 
 /* Oyster memo preview */
 .memo{font-size:.95rem}
@@ -65,39 +89,35 @@ ul.pts li{margin:.2rem 0}
 
 /* Event list (top page) */
 .events{list-style:none;margin:0;padding:0;display:grid;gap:10px}
-.ev{display:flex;gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;text-decoration:none;color:inherit;box-shadow:0 1px 3px rgba(0,0,0,.03);transition:border-color .15s}
-.ev:hover{border-color:var(--accent)}
-.ev .no{flex:0 0 auto;min-width:64px;text-align:center;background:var(--accent);color:#fff;border-radius:10px;padding:6px 8px;font-weight:800;line-height:1.2}
-.ev .no small{display:block;font-size:.66rem;font-weight:600;opacity:.85;letter-spacing:.08em}
+.ev{display:flex;gap:14px;align-items:center;background:linear-gradient(180deg,var(--card-2),var(--card));border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;text-decoration:none;color:inherit;transition:border-color .15s}
+.ev:hover{border-color:var(--gold)}
+.ev .no{flex:0 0 auto;min-width:64px;text-align:center;background:var(--gold-grad);color:#2a1d0c;border-radius:8px;padding:6px 8px;font-family:var(--serif);font-weight:800;line-height:1.2}
+.ev .no small{display:block;font-size:.66rem;font-weight:700;letter-spacing:.08em}
 .ev .body{flex:1;min-width:0}
-.ev .ttl{font-weight:800;color:var(--accent-2)}
+.ev .ttl{font-family:var(--serif);font-weight:800;color:var(--gold-2)}
 .ev .meta{font-size:.88rem;color:var(--muted)}
-.ev .badge{flex:0 0 auto;font-size:.74rem;font-weight:700;border-radius:99px;padding:2px 10px;background:#fff0d9;color:#80551d}
-.ev.past .no{background:#9aa9a3}
-.ev.past .badge{background:#edf1ee;color:#5d6b67}
+.ev .badge{flex:0 0 auto;font-size:.74rem;font-weight:700;border-radius:99px;padding:1px 10px;border:1px solid var(--gold);color:var(--gold-2)}
+.ev.past .no{background:#5b5144;color:#e9dfcd}
+.ev.past .badge{border-color:var(--line);color:var(--muted)}
 .empty{color:var(--muted);font-size:.92rem}
+.ev .lock{color:var(--muted)}
 
-footer{border-top:1px solid var(--line);padding:18px 0 40px;color:var(--muted);font-size:.86rem}
-
-/* Big-screen display mode: add ?display to an event page URL */
-body.display{font-size:22px}
-body.display .pre-only,body.display .sitebar{display:none}
-@media print{body{font-size:14px}.sitebar{display:none}.tl li.now{box-shadow:none;background:none}}
+footer{padding:22px 0 40px;color:var(--muted);font-size:.86rem;text-align:center;background:linear-gradient(90deg,transparent,var(--line),transparent) top/100% 1px no-repeat}
 
 /* Passphrase form for locked venues (inside the hero) */
 .unlock{display:flex;flex-direction:column;gap:6px}
-.lock-msg{font-size:.9rem;opacity:.9}
+.lock-msg{font-size:.9rem;opacity:.95}
 .unlock-row{display:flex;gap:6px;max-width:320px}
-.unlock input{flex:1;min-width:0;font-size:16px;padding:7px 10px;border-radius:8px;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.95);color:var(--ink)}
-.unlock button{flex:0 0 auto;font-size:.95rem;font-weight:700;padding:7px 14px;border-radius:8px;border:0;background:#fff;color:var(--accent-2);cursor:pointer}
+.unlock input{flex:1;min-width:0;font-size:16px;padding:7px 10px;border-radius:6px;border:1px solid var(--gold);background:rgba(10,7,4,.75);color:var(--ink)}
+.unlock input::placeholder{color:var(--muted)}
+.unlock button{flex:0 0 auto;font-size:.95rem;font-weight:700;padding:7px 14px;border-radius:6px;border:0;background:var(--gold-grad);color:#2a1d0c;cursor:pointer}
 .unlock button:disabled{opacity:.6}
-.unlock-err{font-size:.85rem;color:#ffd9cf;min-height:1.2em}
-.ev .lock{color:var(--muted)}
+.unlock-err{font-size:.85rem;color:#ffc2b1;min-height:1.2em;font-family:initial}
 
 /* Oyster (Amabe) block */
 .oyster img{display:block;width:100%;height:auto;border-radius:10px}
 .oy-hero{margin:0 0 12px}
-.oy-name{margin:0;font-size:1.2rem;font-weight:800;color:var(--accent-2)}
+.oy-name{margin:0;font-family:var(--serif);font-size:1.3rem;font-weight:800;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .oy-lead{margin:.1rem 0 .6rem;color:var(--muted)}
 .oy-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0 0}
 .oy-grid figure{margin:0}
@@ -106,13 +126,15 @@ body.display .pre-only,body.display .sitebar{display:none}
 .feature-photo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:16px;align-items:center}
 .feature-photo img{display:block;width:100%;height:auto;border-radius:10px}
 .feature-photo p{margin:.2rem 0}
+.feature-photo .oy-name{font-size:1.2rem}
 @media(max-width:560px){.feature-photo{grid-template-columns:1fr}}
 
-/* Hero with photo background (Amabe sea, credited in .hero-credit) */
-header.hero.photo{position:relative;background:
-  linear-gradient(180deg,rgba(13,32,28,.45) 0%,rgba(13,32,28,.72) 100%),
-  url(img/amabe/kaiyo-sea.jpg) center 40%/cover no-repeat,#1d3a33;
-  padding:56px 0 40px}
-header.hero.photo h1,header.hero.photo .facts,header.hero.photo p{text-shadow:0 1px 8px rgba(0,0,0,.45)}
-.hero-credit{position:absolute;right:12px;bottom:6px;font-size:.66rem;color:rgba(255,255,255,.75);text-shadow:0 1px 3px rgba(0,0,0,.6)}
-.hero-credit a{color:inherit}
+/* Big-screen display mode: add ?display to an event page URL */
+body.display{font-size:22px}
+body.display .pre-only,body.display .sitebar{display:none}
+@media print{
+  body{font-size:14px;background:#fff;color:#000}
+  .sitebar{display:none}
+  header.hero{background:#14100c;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .tl li.now{box-shadow:none;background:none}
+}

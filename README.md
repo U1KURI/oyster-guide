@@ -19,7 +19,7 @@
 3. `assets/events.js` に1件追加
 
    ```js
-   { vol: 1, title: "", date: "2027-01-20", open: "18:40", start: "19:00", end: "21:00",
+   { vol: 1, title: "", date: "2027-01-20", open: "18:50", start: "19:00", end: "21:00",
      venue: "v0", fee: "std5000", path: "events/vol-1/" }
    ```
 
